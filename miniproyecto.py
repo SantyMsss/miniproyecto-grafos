@@ -1,6 +1,15 @@
 import matplotlib.pyplot as plt
 import networkx as nx
 
+"""
+PROGRAMA DESARROLLADO POR SANTIAGO MARTINEZ SERNA - 230222014
+REPOSITORIO: https://github.com/SantyMsss/miniproyecto-grafos
+PARA LA EJECUCIÓN DEL PROGRAMA SE DEBE TENER INSTALADAS LAS LIBRERÍAS:  networkx y matplotlib
+PARA INSTALARLAS SE PUEDE EJECUTAR EL SIGUIENTE COMANDO EN LA TERMINAL:
+
+pip install networkx matplotlib
+"""
+
 # Función para verificar si la relación es reflexiva
 def es_reflexiva(matriz):
     for i in range(len(matriz)):
@@ -89,14 +98,33 @@ def ingresar_matriz():
     
     return matriz
 
+# Función para imprimir la matriz
+def imprimir_matriz(matriz):
+    print("\nMatriz ingresada:")
+    for fila in matriz:
+        print(" ".join(map(str, fila)))
+    print("\nDesarrollado por Santiago Martinez Serna - 230222014\n")
+
+# Función para mostrar información de los programadores
+def info_programadores():
+    print("\nInformacion del programador:")
+    print("Desarrollado por: Santiago Martinez Serna")
+    print("Codigo: 230222014")
+    print("UCEVA - ING SISTEMAS")
+
 # Función principal
 def main():
+    # Mostrar información de los programadores
+    info_programadores()
+
     # Ingresar la matriz desde el usuario
     matriz = ingresar_matriz()
 
+    # Imprimir la matriz ingresada
+    imprimir_matriz(matriz)
+
     # Evaluar las propiedades de la relación
     print("\nEvaluando la relación representada por la matriz:")
-    
     print(f"Reflexiva: {es_reflexiva(matriz)}")
     print(f"Simétrica: {es_simetrica(matriz)}")
     print(f"Antisimétrica: {es_antisimetrica(matriz)}")
